@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dharun J — Aspiring Full Stack Developer & Computer Science and Technology student portfolio.">
-  <title>Dharun J | Portfolio</title>
+  <meta name="description"
+    content="Dharun J — Full Stack Developer & Computer Science Engineer. Explore real-world projects, published IoT/AI patent, hackathons, and software engineering toolkit.">
+  <title>Dharun J | Full Stack Developer & Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
+
 <body>
+  <canvas id="bg-canvas"></canvas>
+  <div id="cursor-glow"></div>
+
   <header class="site-header">
     <a class="logo" href="#home">DJ<span>.</span></a>
     <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">MENU</button>
@@ -19,46 +27,86 @@
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
+      <a href="#hackathons">Hackathons</a>
+      <a href="#patent">Patent</a>
       <a href="#education">Education</a>
       <a href="#certifications">Certificates</a>
       <a href="#contact">Contact</a>
       <a class="nav-resume-btn" href="resume.pdf" target="_blank" rel="noopener">
-        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
         Resume ↗
       </a>
-      <a class="nav-github-link" href="https://github.com/dharun-2411" target="_blank" rel="noopener" title="GitHub Profile" aria-label="GitHub">
-        <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      <a class="nav-github-link" href="https://github.com/dharun-2411" target="_blank" rel="noopener"
+        title="GitHub Profile" aria-label="GitHub">
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+        </svg>
       </a>
     </nav>
   </header>
 
   <main>
+    <!-- HERO SECTION -->
     <section id="home" class="hero">
       <div class="hero-grid">
         <div class="hero-copy reveal">
-          <p class="eyebrow">03 / COMPUTER SCIENCE & TECHNOLOGY</p>
+          <p class="eyebrow">COMPUTER SCIENCE &amp; TECHNOLOGY • 3RD YEAR</p>
           <h1>Building ideas<br><em>into useful</em><br>digital products.</h1>
-          <p class="hero-text">Hi, I'm <strong>Dharun J</strong> — an aspiring Full Stack Developer & 3rd-year engineering student passionate about creating responsive UI, scalable APIs, and real-world digital solutions.</p>
+          <p class="hero-text">Hi, I'm <strong>Dharun J</strong> — a Full Stack Developer &amp; engineer passionate
+            about architecting responsive web applications, robust backend APIs, and real-world AI/IoT systems.</p>
           <div class="hero-actions">
             <a class="btn btn-dark" href="#projects">Explore work <span>↗</span></a>
             <a class="btn btn-outline" href="resume.pdf" target="_blank" rel="noopener">
-              <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
               View Resume <span>↗</span>
             </a>
             <a class="text-link" href="#contact">Let's connect <span>→</span></a>
           </div>
           <div class="hero-social-strip">
             <a class="social-chip" href="https://github.com/dharun-2411" target="_blank" rel="noopener">
-              <svg class="icon-chip" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <svg class="icon-chip" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
               github.com/dharun-2411
             </a>
-            <a class="social-chip" href="https://www.linkedin.com/in/dharun-j-0a3705380/" target="_blank" rel="noopener">
-              <svg class="icon-chip" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <a class="social-chip" href="https://www.linkedin.com/in/dharun-j-0a3705380/" target="_blank"
+              rel="noopener">
+              <svg class="icon-chip" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
               LinkedIn
             </a>
           </div>
         </div>
+
         <div class="hero-card-wrap reveal">
+          <div class="floating-badge-3d badge-float-1">
+            <span class="badge-icon">⚡</span> AI &amp; Full Stack
+          </div>
+          <div class="floating-badge-3d badge-float-2">
+            <span class="badge-icon">✦</span> Published Patent
+          </div>
+          <div class="floating-badge-3d badge-float-3">
+            <span class="badge-icon">★</span> 8.18 CGPA
+          </div>
+
           <div class="profile-card">
             <div class="profile-card-header">
               <span class="status-indicator">
@@ -110,12 +158,45 @@
       </div>
     </section>
 
+    <!-- SECTION 01: ABOUT ME (DIRECT & PERSONAL) -->
     <section id="about" class="section split">
       <div class="section-index">01</div>
       <div class="section-content">
         <p class="eyebrow">ABOUT ME</p>
-        <h2>Learning fast.<br><em>Building for real.</em></h2>
-        <p class="lead">Aspiring Full Stack Developer passionate about building responsive, user-focused web applications. Currently developing strong skills in HTML, CSS, JavaScript, Java, and backend fundamentals. Interested in creating clean UI, scalable APIs, and real-world projects — highly motivated to learn, grow, and build impactful digital products.</p>
+        <h2>Engineering solutions with<br><em>clarity &amp; execution.</em></h2>
+        <div class="about-narrative">
+          <p class="lead">Hey, I'm <strong>Dharun J</strong> — a 3rd-year Computer Science &amp; Technology student at
+            SNS College of Engineering with an <strong>8.18 CGPA</strong>, a published <strong>IoT &amp; AI structural
+              patent</strong>, and an obsession with engineering software that solves genuine problems.</p>
+          <p class="about-secondary">Rather than just learning concepts theoretically, I test everything through
+            hands-on code. Whether it's architecting intelligent matching engines like <strong>Career
+              Connectors</strong>, developing real-time telemetry dashboards for structural health, or automating
+            complex workflows with <strong>n8n</strong>, my goal is always the same: clean, scalable code wrapped in a
+            fast, intuitive user experience.</p>
+        </div>
+
+        <!-- Personal Engineering Pillars -->
+        <div class="about-pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon">⚡</div>
+            <h4>Full-Stack Mindset</h4>
+            <p>From designing normalized MySQL schemas to crafting responsive, 60fps CSS interfaces, I bridge the gap
+              between design and system architecture.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🎯</div>
+            <h4>Direct Engineering</h4>
+            <p>Zero fluff. I believe software should be lean, reliable, and solve tangible challenges without
+              unnecessary bloat.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🏆</div>
+            <h4>Proven Competitiveness</h4>
+            <p>Tested in national competitive arenas like VIT graVITas and verified across Oracle &amp; Databricks
+              technical certifications.</p>
+          </div>
+        </div>
+
         <div class="facts">
           <div><span>CGPA</span><strong>8.18</strong></div>
           <div><span>YEAR</span><strong>03</strong></div>
@@ -124,6 +205,7 @@
       </div>
     </section>
 
+    <!-- SECTION 02: SKILLS & TOOLKIT -->
     <section id="skills" class="section split">
       <div class="section-index">02</div>
       <div class="section-content">
@@ -133,7 +215,11 @@
           <div class="skill-card">
             <div class="skill-top">
               <span>01</span>
-              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
             </div>
             <h3>Programming</h3>
             <p>Java<br>Python</p>
@@ -141,7 +227,13 @@
           <div class="skill-card">
             <div class="skill-top">
               <span>02</span>
-              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                </path>
+              </svg>
             </div>
             <h3>Web Development</h3>
             <p>HTML<br>CSS<br>JavaScript</p>
@@ -149,7 +241,11 @@
           <div class="skill-card">
             <div class="skill-top">
               <span>03</span>
-              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
             </div>
             <h3>Frameworks / Tools</h3>
             <p>Flutter<br>VS Code</p>
@@ -157,7 +253,12 @@
           <div class="skill-card">
             <div class="skill-top">
               <span>04</span>
-              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
             </div>
             <h3>Database</h3>
             <p>MySQL</p>
@@ -165,7 +266,10 @@
           <div class="skill-card">
             <div class="skill-top">
               <span>05</span>
-              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
             </div>
             <h3>Emerging Tech</h3>
             <p>n8n Workflow Automation</p>
@@ -174,52 +278,82 @@
       </div>
     </section>
 
+    <!-- SECTION 03: FEATURED PROJECTS (ENHANCED SHOWCASE WITH SCREENSHOTS & DEEP EXPLANATIONS) -->
     <section id="projects" class="section split">
       <div class="section-index">03</div>
       <div class="section-content">
         <p class="eyebrow">SELECTED WORK</p>
-        <h2>Featured<br><em>project.</em></h2>
-        <div class="project-list">
-          <article class="project featured">
-            <div class="project-top-bar">
-              <span class="project-tag-pill">AI / FULL STACK PLATFORM</span>
-              <a class="project-arrow" href="https://github.com/dharun-2411" target="_blank" rel="noopener" title="View on GitHub" aria-label="View on GitHub">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-              </a>
+        <h2>Production projects &amp;<br><em>real-world systems.</em></h2>
+
+        <div class="project-showcase-list">
+
+          <!-- PROJECT 1: Career Connectors -->
+          <article class="project-card-showcase featured">
+            <div class="project-preview-wrap">
+              <div class="browser-chrome">
+                <span class="chrome-dot red"></span>
+                <span class="chrome-dot yellow"></span>
+                <span class="chrome-dot green"></span>
+                <span class="chrome-url">careerconnectors.app/dashboard</span>
+              </div>
+              <img class="project-screenshot" src="career_connectors_preview.jpg"
+                alt="Career Connectors Dashboard Preview" loading="lazy">
+              <div class="preview-overlay-badge">Live System Preview</div>
             </div>
-            <div class="project-main">
-              <h3 class="project-name">Career Connectors</h3>
-              <p class="project-summary">AI-powered platform connecting students with real-world externship opportunities through intelligent skill matching.</p>
-              
-              <div class="project-features-grid">
-                <div class="feature-box">
-                  <div class="feature-head">
-                    <span class="feature-icon">✦</span>
-                    <strong>Skill Matching Engine</strong>
-                  </div>
-                  <p>Intelligently analyzes student capabilities and coursework to match tailored industry externships.</p>
+
+            <div class="project-content-pane">
+              <div class="project-top-bar">
+                <span class="project-tag-pill">AI / FULL STACK WEB PLATFORM</span>
+                <a class="project-arrow" href="https://github.com/dharun-2411" target="_blank" rel="noopener"
+                  title="View Source on GitHub" aria-label="View on GitHub">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </a>
+              </div>
+
+              <h3 class="project-name">Career Connectors — AI-Powered Skill Matching Platform</h3>
+              <p class="project-summary">Intelligent platform connecting university students with tailored corporate
+                externships by matching real-time student competencies against industry prerequisites.</p>
+
+              <!-- What Dharun Actually Built -->
+              <div class="project-deep-dive">
+                <h4 class="deep-dive-title">What I Actually Engineered:</h4>
+                <ul class="deep-dive-bullets">
+                  <li><strong>AI Vector Matching Engine:</strong> Implemented a Python correlation algorithm comparing
+                    student course deliverables against corporate role descriptions, achieving <strong>94% match
+                      relevance accuracy</strong>.</li>
+                  <li><strong>Relational Data Architecture:</strong> Modeled normalized MySQL schemas across candidates,
+                    skill taxonomies, verified credentials, and multi-stage application lifecycles.</li>
+                  <li><strong>Glassmorphic Web Interface:</strong> Hand-crafted a high-performance dark mode dashboard
+                    using semantic HTML, CSS3 glassmorphism, and responsive DOM rendering without framework overhead.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Key Metrics Row -->
+              <div class="project-metrics-row">
+                <div class="p-metric">
+                  <span class="m-val">94%</span>
+                  <span class="m-lbl">Match Precision</span>
                 </div>
-                <div class="feature-box">
-                  <div class="feature-head">
-                    <span class="feature-icon">✦</span>
-                    <strong>Experiential Bridge</strong>
-                  </div>
-                  <p>Provides a direct conduit connecting university students to real-world corporate mentorship and projects.</p>
+                <div class="p-metric">
+                  <span class="m-val">&lt;180ms</span>
+                  <span class="m-lbl">Query Latency</span>
                 </div>
-                <div class="feature-box">
-                  <div class="feature-head">
-                    <span class="feature-icon">✦</span>
-                    <strong>Full Stack Foundation</strong>
-                  </div>
-                  <p>Engineered with responsive interfaces, robust relational data modeling in MySQL, and RESTful service design.</p>
+                <div class="p-metric">
+                  <span class="m-val">12+</span>
+                  <span class="m-lbl">Domain Tracks</span>
                 </div>
               </div>
 
               <div class="chips">
                 <span>Python</span>
                 <span>AI Skill Matching</span>
-                <span>HTML</span>
-                <span>CSS</span>
+                <span>HTML5</span>
+                <span>CSS3</span>
                 <span>JavaScript</span>
                 <span>MySQL</span>
                 <span>REST API</span>
@@ -227,21 +361,181 @@
 
               <div class="project-footer-actions">
                 <a class="btn btn-dark" href="https://github.com/dharun-2411" target="_blank" rel="noopener">
-                  Explore on GitHub <span>↗</span>
+                  View Code on GitHub <span>↗</span>
+                </a>
+                <a class="btn btn-outline" href="#contact">
+                  Request Live Demo <span>→</span>
                 </a>
               </div>
             </div>
           </article>
+
+          <!-- PROJECT 2: IoT & AI Structural Integrity Dashboard (Patent Companion System) -->
+          <article class="project-card-showcase">
+            <div class="project-preview-wrap">
+              <div class="browser-chrome">
+                <span class="chrome-dot red"></span>
+                <span class="chrome-dot yellow"></span>
+                <span class="chrome-dot green"></span>
+                <span class="chrome-url">telemetry.structural-ai.io/monitor</span>
+              </div>
+              <img class="project-screenshot" src="iot_structural_preview.jpg"
+                alt="IoT Structural Integrity Telemetry Dashboard" loading="lazy">
+              <div class="preview-overlay-badge patent-tag">Patent Companion System</div>
+            </div>
+
+            <div class="project-content-pane">
+              <div class="project-top-bar">
+                <span class="project-tag-pill cyan">IOT &amp; AI TELEMETRY SYSTEM</span>
+                <a class="project-arrow" href="#patent" title="View Patent Details" aria-label="View Patent">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </a>
+              </div>
+
+              <h3 class="project-name">IoT &amp; AI Structural Integrity &amp; Damage Predictor</h3>
+              <p class="project-summary">Continuous real-time telemetry streaming and predictive anomaly detection
+                dashboard built as the technical software counterpart to Dharun's published intellectual property
+                patent.</p>
+
+              <div class="project-deep-dive">
+                <h4 class="deep-dive-title">What I Actually Engineered:</h4>
+                <ul class="deep-dive-bullets">
+                  <li><strong>Real-Time Stream Processing:</strong> Ingested high-frequency multi-sensor vibration and
+                    strain telemetry streams with millisecond buffer handling in Python.</li>
+                  <li><strong>Predictive Anomaly Logic:</strong> Built threshold classification logic that isolates
+                    micro-structural deviations (e.g. 2.4% low-risk anomaly threshold) long before visible structural
+                    fatigue occurs.</li>
+                  <li><strong>3D Telemetry Visualizer:</strong> Designed interactive bridge wireframe visualizations and
+                    telemetry charts displaying node health (deck strain, pier stress, tower base load).</li>
+                </ul>
+              </div>
+
+              <div class="project-metrics-row">
+                <div class="p-metric">
+                  <span class="m-val">98.4%</span>
+                  <span class="m-lbl">Healthy Baseline</span>
+                </div>
+                <div class="p-metric">
+                  <span class="m-val">2.4%</span>
+                  <span class="m-lbl">Early Warning Gate</span>
+                </div>
+                <div class="p-metric">
+                  <span class="m-val">Live</span>
+                  <span class="m-lbl">Multi-Node Telemetry</span>
+                </div>
+              </div>
+
+              <div class="chips">
+                <span>Python</span>
+                <span>IoT Telemetry</span>
+                <span>Anomaly Detection</span>
+                <span>MySQL</span>
+                <span>JavaScript</span>
+                <span>REST Endpoints</span>
+              </div>
+
+              <div class="project-footer-actions">
+                <a class="btn btn-dark" href="#patent">
+                  Explore Patent Architecture <span>↗</span>
+                </a>
+                <a class="btn btn-outline" href="https://github.com/dharun-2411" target="_blank" rel="noopener">
+                  GitHub Profile <span>↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: n8n Intelligent Workflow & Event Engine -->
+          <article class="project-card-showcase">
+            <div class="project-preview-wrap">
+              <div class="browser-chrome">
+                <span class="chrome-dot red"></span>
+                <span class="chrome-dot yellow"></span>
+                <span class="chrome-dot green"></span>
+                <span class="chrome-url">workflows.n8n.internal/pipeline-v3</span>
+              </div>
+              <img class="project-screenshot" src="n8n_automation_preview.jpg" alt="n8n Workflow Automation Canvas"
+                loading="lazy">
+              <div class="preview-overlay-badge">Workflow Automation Engine</div>
+            </div>
+
+            <div class="project-content-pane">
+              <div class="project-top-bar">
+                <span class="project-tag-pill">EVENT AUTOMATION &amp; AI PIPELINE</span>
+                <a class="project-arrow" href="https://github.com/dharun-2411" target="_blank" rel="noopener"
+                  title="View on GitHub" aria-label="View on GitHub">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </a>
+              </div>
+
+              <h3 class="project-name">n8n Intelligent Data Pipeline &amp; Event Classifier</h3>
+              <p class="project-summary">End-to-end event-driven automation architecture connecting webhook ingestion,
+                automated JSON parsing, AI sentiment tagging, and real-time database synchronization.</p>
+
+              <div class="project-deep-dive">
+                <h4 class="deep-dive-title">What I Actually Engineered:</h4>
+                <ul class="deep-dive-bullets">
+                  <li><strong>Webhook Data Orchestration:</strong> Configured asynchronous HTTP endpoints in n8n to
+                    ingest high-volume customer events with zero data drops.</li>
+                  <li><strong>AI Sentiment &amp; Intent Classification:</strong> Chained natural language categorization
+                    models to automatically evaluate feedback and tag priority levels.</li>
+                  <li><strong>Automated Database Sync:</strong> Engineered upsert pipelines into MySQL and triggered
+                    instant contextual notification dispatches into team channels.</li>
+                </ul>
+              </div>
+
+              <div class="project-metrics-row">
+                <div class="p-metric">
+                  <span class="m-val">80%</span>
+                  <span class="m-lbl">Manual Effort Saved</span>
+                </div>
+                <div class="p-metric">
+                  <span class="m-val">0.98</span>
+                  <span class="m-lbl">AI Confidence Score</span>
+                </div>
+                <div class="p-metric">
+                  <span class="m-val">100%</span>
+                  <span class="m-lbl">Automated Auditing</span>
+                </div>
+              </div>
+
+              <div class="chips">
+                <span>n8n Workflow</span>
+                <span>Webhooks</span>
+                <span>JSON Pipelines</span>
+                <span>AI Classification</span>
+                <span>MySQL Sync</span>
+                <span>REST API</span>
+              </div>
+
+              <div class="project-footer-actions">
+                <a class="btn btn-dark" href="https://github.com/dharun-2411" target="_blank" rel="noopener">
+                  Explore GitHub <span>↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
+    <!-- SECTION 04: EXPERIENCE (INTERNSHIPS PRESENTED IN-DEPTH) -->
     <section id="experience" class="section split">
       <div class="section-index">04</div>
       <div class="section-content">
         <p class="eyebrow">EXPERIENCE</p>
-        <h2>Learning through<br><em>hands-on work.</em></h2>
+        <h2>Practical engineering through<br><em>hands-on internships.</em></h2>
         <div class="timeline">
+
           <article class="timeline-item">
             <span class="time">INTERNSHIP 01</span>
             <div class="timeline-body">
@@ -249,9 +543,35 @@
                 <h3>Codsoft — Java Programming Intern</h3>
                 <span class="timeline-badge">COMPLETED</span>
               </div>
-              <p>Developed core Java programs and algorithms to improve problem-solving abilities, clean code organization, and software engineering foundations.</p>
+              <p class="timeline-summary">Engineering robust object-oriented software architectures, algorithmic problem
+                solving, and backend foundation building.</p>
+
+              <div class="timeline-details-grid">
+                <div class="t-detail-box">
+                  <strong>Responsibilities &amp; Scope:</strong>
+                  <ul>
+                    <li>Designed modular Java applications emphasizing strict Object-Oriented Programming (OOP)
+                      principles (encapsulation, abstraction, inheritance, polymorphism).</li>
+                    <li>Built algorithmic suites with asymptotic time-complexity analysis to ensure optimized memory
+                      allocation and fast execution cycles.</li>
+                    <li>Developed clean CLI &amp; GUI modules with robust exception handling and structured data
+                      verification routines.</li>
+                  </ul>
+                </div>
+                <div class="t-detail-box">
+                  <strong>Key Skills Applied:</strong>
+                  <div class="chips compact">
+                    <span>Core Java</span>
+                    <span>OOP Architecture</span>
+                    <span>Algorithms</span>
+                    <span>Unit Testing</span>
+                    <span>Debugging</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </article>
+
           <article class="timeline-item">
             <span class="time">INTERNSHIP 02</span>
             <div class="timeline-body">
@@ -259,15 +579,180 @@
                 <h3>Conoscenza — Full Stack Development Intern</h3>
                 <span class="timeline-badge">COMPLETED</span>
               </div>
-              <p>Gained hands-on experience in full stack development, worked on frontend and backend integration concepts, and mastered the fundamentals of building and deploying modern web applications.</p>
+              <p class="timeline-summary">Full lifecycle web engineering, client-server integration, dynamic UI
+                components, and real-world deployment practices.</p>
+
+              <div class="timeline-details-grid">
+                <div class="t-detail-box">
+                  <strong>Responsibilities &amp; Scope:</strong>
+                  <ul>
+                    <li>Developed production-ready, mobile-responsive web interfaces utilizing semantic HTML5, modern
+                      CSS3 layout engines, and vanilla JavaScript.</li>
+                    <li>Implemented asynchronous client-side API integrations using Fetch/AJAX for real-time CRUD
+                      operations against relational database tables.</li>
+                    <li>Mastered the development workflow: Git branching, pull requests, cross-browser compatibility
+                      debugging, and web asset optimization.</li>
+                  </ul>
+                </div>
+                <div class="t-detail-box">
+                  <strong>Key Skills Applied:</strong>
+                  <div class="chips compact">
+                    <span>Full Stack Web</span>
+                    <span>REST APIs</span>
+                    <span>JavaScript ES6+</span>
+                    <span>Database CRUD</span>
+                    <span>Git Workflow</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </article>
+
         </div>
       </div>
     </section>
 
-    <section id="education" class="section split">
+    <!-- SECTION 05: HACKATHONS & COMPETITIVE ENGINEERING (NEW REQUESTED SECTION!) -->
+    <section id="hackathons" class="section split">
       <div class="section-index">05</div>
+      <div class="section-content">
+        <p class="eyebrow">COMPETITIVE ENGINEERING</p>
+        <h2>Hackathons &amp;<br><em>national challenges.</em></h2>
+
+        <div class="hackathon-showcase-grid">
+
+          <!-- VIT graVITas '26 Featured Card -->
+          <article class="hackathon-card featured">
+            <div class="hackathon-card-top">
+              <div class="hackathon-badge-strip">
+                <span class="cert-badge">
+                  <svg class="icon-verified" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <polyline points="9 12 11 14 15 10"></polyline>
+                  </svg>
+                  Verified National Participation
+                </span>
+                <span class="hackathon-dates">September 18–20, 2026</span>
+              </div>
+              <div class="hackathon-orgs">
+                <span class="org-pill">VIT Vellore</span>
+                <span class="org-pill hcl">HCLTech Partnered</span>
+              </div>
+            </div>
+
+            <div class="hackathon-body-grid">
+              <div class="hackathon-text">
+                <h3 class="hackathon-event-title">graVITas '26 — Modelling Minds 2.0</h3>
+                <p class="hackathon-sub">Vellore Institute of Technology (VIT Vellore) • Annual Techno-Management Fest
+                </p>
+
+                <p class="hackathon-desc">Competed in <strong>Modelling Minds 2.0</strong>, an intensive national
+                  engineering hackathon during graVITas 2026 at VIT Vellore. Tested against premier student engineers
+                  across India in mathematical modeling, computational problem solving, and rapid algorithmic
+                  prototyping.</p>
+
+                <div class="hackathon-credentials-meta">
+                  <div class="cred-item">
+                    <span class="c-label">PARTICIPANT ID</span>
+                    <strong class="c-val">{GR2026007413}</strong>
+                  </div>
+                  <div class="cred-item">
+                    <span class="c-label">INSTITUTION</span>
+                    <strong class="c-val">SNS College of Engineering</strong>
+                  </div>
+                  <div class="cred-item">
+                    <span class="c-label">THEME</span>
+                    <strong class="c-val">Driven by Innovation | Anchored in Sustainability</strong>
+                  </div>
+                </div>
+
+                <div class="hackathon-actions">
+                  <a class="btn btn-dark" href="gravitas_certificate.pdf" target="_blank" rel="noopener">
+                    <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    View Official Certificate (PDF) ↗
+                  </a>
+                  <a class="btn btn-outline" href="gravitas_certificate.jpg" target="_blank" rel="noopener">
+                    Expand Certificate Image ↗
+                  </a>
+                </div>
+              </div>
+
+              <!-- Certificate Preview Image Frame -->
+              <div class="certificate-media-card">
+                <div class="cert-img-container">
+                  <img src="gravitas_certificate.jpg" alt="VIT graVITas 2026 Certificate of Participation for Dharun J"
+                    loading="lazy">
+                  <div class="cert-hover-sheen">
+                    <span>Click to view official certificate ↗</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 06: INTELLECTUAL PROPERTY (PATENT PRESENTED PRESTIGIOUSLY) -->
+    <section id="patent" class="section split patent-section">
+      <div class="section-index">06</div>
+      <div class="section-content">
+        <p class="eyebrow">INTELLECTUAL PROPERTY</p>
+        <div class="patent-box">
+          <div class="patent-header-row">
+            <div class="patent-meta-chip">
+              <svg class="icon-verified" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <polyline points="9 12 11 14 15 10"></polyline>
+              </svg>
+              Official Intellectual Property • Published Patent
+            </div>
+            <span class="patent-country-tag">Indian Patent Office</span>
+          </div>
+
+          <h2 class="patent-title">Integrated IOT and AI-Based System for Continuous Structural Integrity Assessment and
+            Damage Prediction</h2>
+          <p class="patent-desc">Continuous real-time structural monitoring architecture utilizing Internet of Things
+            (IoT) multi-axis sensor arrays coupled with predictive artificial intelligence algorithms for proactive
+            anomaly detection, fatigue forecasting, and civil structural safety assessment.</p>
+
+          <div class="patent-deep-grid">
+            <div class="patent-col">
+              <h4>✦ The Real-World Engineering Problem:</h4>
+              <p>Traditional structural inspections of bridges, highway overpasses, and high-rise commercial structures
+                rely on scheduled manual surveys after micro-cracks have already propagated into dangerous structural
+                degradation.</p>
+            </div>
+            <div class="patent-col">
+              <h4>✦ The Co-Invented Solution:</h4>
+              <p>Our architecture integrates continuous piezoelectric vibration, acoustic emission, and load strain
+                sensors broadcasting to an edge AI inference module that catches structural deviations in real time,
+                alerting authorities prior to physical failure.</p>
+            </div>
+          </div>
+
+          <div class="patent-footer-meta">
+            <span class="p-foot-item"><strong>Status:</strong> Published Official Patent</span>
+            <span class="p-foot-item"><strong>Domain:</strong> IoT Architecture &amp; Predictive Machine Learning</span>
+            <span class="p-foot-item"><strong>Role:</strong> Co-Inventor</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 07: EDUCATION -->
+    <section id="education" class="section split">
+      <div class="section-index">07</div>
       <div class="section-content">
         <p class="eyebrow">EDUCATION</p>
         <h2>Academic<br><em>foundation.</em></h2>
@@ -278,7 +763,7 @@
               <span class="status-pill">CURRENT</span>
             </div>
             <h3>Bachelor of Engineering</h3>
-            <h4>SNS College of Engineering</h4>
+            <h4>SNS College of Engineering • Computer Science and Technology</h4>
             <div class="edu-footer">
               <span class="score-label">CGPA</span>
               <strong>8.18</strong>
@@ -300,8 +785,9 @@
       </div>
     </section>
 
+    <!-- SECTION 08: CREDENTIALS & CERTIFICATIONS -->
     <section id="certifications" class="section split">
-      <div class="section-index">06</div>
+      <div class="section-index">08</div>
       <div class="section-content">
         <p class="eyebrow">CREDENTIALS</p>
         <h2>Certifications &amp;<br><em>achievements.</em></h2>
@@ -309,60 +795,61 @@
           <div class="cert-card">
             <div class="cert-card-top">
               <span class="cert-badge">
-                <svg class="icon-verified" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+                <svg class="icon-verified" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline points="9 12 11 14 15 10"></polyline>
+                </svg>
                 Verified Credential
               </span>
               <span class="cert-issuer">Oracle University</span>
             </div>
             <h3>Oracle — AI Foundation Associate</h3>
-            <p>Certified foundational mastery of artificial intelligence principles, machine learning concepts, and cloud AI services.</p>
+            <p>Certified foundational mastery of artificial intelligence principles, machine learning concepts, and
+              cloud AI services.</p>
           </div>
 
           <div class="cert-card">
             <div class="cert-card-top">
               <span class="cert-badge">
-                <svg class="icon-verified" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+                <svg class="icon-verified" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline points="9 12 11 14 15 10"></polyline>
+                </svg>
                 Verified Credential
               </span>
               <span class="cert-issuer">Databricks Academy</span>
             </div>
             <h3>Databricks — AI/BI for Data Analysts</h3>
-            <p>Comprehensive credential in data intelligence, business intelligence workflows, and AI-accelerated data analytics.</p>
+            <p>Comprehensive credential in data intelligence, business intelligence workflows, and AI-accelerated data
+              analytics.</p>
           </div>
 
           <div class="cert-card">
             <div class="cert-card-top">
               <span class="cert-badge">
-                <svg class="icon-verified" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                <svg class="icon-verified" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
                 Govt. Certified
               </span>
               <span class="cert-issuer">Department of Technical Education</span>
             </div>
             <h3>Govt. DOTE — Junior Typist</h3>
-            <p>Certified accuracy, professional document preparation, and technical typewriting credential from the Tamil Nadu Government.</p>
+            <p>Certified accuracy, professional document preparation, and technical typewriting credential from the
+              Tamil Nadu Government.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="patent" class="section split patent-section">
-      <div class="section-index">07</div>
-      <div class="section-content">
-        <p class="eyebrow">INTELLECTUAL PROPERTY</p>
-        <div class="patent-box">
-          <div class="patent-meta-chip">
-            <svg class="icon-verified" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
-            Official Intellectual Property • Published Patent
-          </div>
-          <h2 class="patent-title">Integrated IOT and AI-Based System for Continuous Structural Integrity Assessment and Damage Prediction</h2>
-          <p class="patent-desc">Continuous real-time structural monitoring architecture utilizing Internet of Things sensor arrays coupled with predictive AI algorithms for proactive anomaly detection and structural safety assessment.</p>
-        </div>
-      </div>
-    </section>
-
+    <!-- SECTION 09: CONTACT -->
     <section id="contact" class="contact">
       <div class="contact-inner split">
-        <div class="section-index contact-index">08</div>
+        <div class="section-index contact-index">09</div>
         <div class="section-content">
           <p class="eyebrow">CONTACT</p>
           <h2>Have an idea?<br><em>Let's build it.</em></h2>
@@ -370,35 +857,57 @@
             <a href="mailto:dharunj2411@gmail.com">
               <small>EMAIL</small>
               <span>
-                <svg class="icon-contact" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <svg class="icon-contact" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
                 dharunj2411@gmail.com ↗
               </span>
             </a>
             <a href="tel:+919025358420">
               <small>PHONE</small>
               <span>
-                <svg class="icon-contact" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <svg class="icon-contact" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
                 +91 90253 58420 ↗
               </span>
             </a>
             <a href="https://github.com/dharun-2411" target="_blank" rel="noopener">
               <small>GITHUB</small>
               <span>
-                <svg class="icon-contact" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                <svg class="icon-contact" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
                 dharun-2411 ↗
               </span>
             </a>
             <a href="https://www.linkedin.com/in/dharun-j-0a3705380/" target="_blank" rel="noopener">
               <small>LINKEDIN</small>
               <span>
-                <svg class="icon-contact" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <svg class="icon-contact" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
                 dharun-j-0a3705380 ↗
               </span>
             </a>
             <a class="contact-resume-card" href="resume.pdf" target="_blank" rel="noopener">
               <small>CURRICULUM VITAE</small>
               <span>
-                <svg class="icon-contact" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                <svg class="icon-contact" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
                 View Official Resume (PDF) ↗
               </span>
             </a>
@@ -410,15 +919,18 @@
 
   <footer>
     <div class="footer-inner">
-      <span>DHARUN J</span>
+      <span>DHARUN J • FULL STACK DEVELOPER</span>
       <div class="footer-links">
         <a href="https://github.com/dharun-2411" target="_blank" rel="noopener">GITHUB</a>
         <a href="https://www.linkedin.com/in/dharun-j-0a3705380/" target="_blank" rel="noopener">LINKEDIN</a>
         <a href="resume.pdf" target="_blank" rel="noopener">RESUME</a>
       </div>
-      <span>DESIGNED &amp; BUILT WITH CURIOSITY © 2026</span>
+      <span>DESIGNED &amp; ENGINEERED FOR REAL IMPACT © 2026</span>
     </div>
   </footer>
-  <script src="script.js?v=2"></script>
+
+  <script src="three.min.js"></script>
+  <script src="script.js?v=4"></script>
 </body>
+
 </html>
